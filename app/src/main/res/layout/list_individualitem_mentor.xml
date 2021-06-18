@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listIndividualMentorLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="@drawable/background_rectangle_grey"
+    android:minWidth="350dp"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/mentorNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_toEndOf="@id/mentorNameLabel"
+        android:padding="6dp"
+        android:text="Replace Mentor Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/mentorNameLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mentorPhoneTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mentorNameTextView"
+        android:layout_margin="8dp"
+        android:layout_toEndOf="@id/mentorPhoneLabel"
+        android:padding="6dp"
+        android:text="Replace Phone Number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/mentorPhoneLabel"
+        app:layout_constraintTop_toBottomOf="@+id/mentorEmailTextView" />
+
+    <TextView
+        android:id="@+id/mentorEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mentorPhoneTextView"
+        android:layout_margin="8dp"
+        android:layout_toEndOf="@id/mentorEmailLabel"
+        android:padding="6dp"
+        android:text="Replace Email Address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/mentorEmailLabel"
+        app:layout_constraintTop_toBottomOf="@+id/mentorNameTextView" />
+
+    <TextView
+        android:id="@+id/mentorNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="6dp"
+        android:text="Mentor Name :"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mentorPhoneLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mentorNameLabel"
+        android:layout_margin="8dp"
+        android:padding="6dp"
+        android:text="Phone Number :"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mentorEmailLabel" />
+
+    <TextView
+        android:id="@+id/mentorEmailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mentorPhoneLabel"
+        android:layout_margin="8dp"
+        android:padding="6dp"
+        android:text="Email Address :"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mentorNameLabel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

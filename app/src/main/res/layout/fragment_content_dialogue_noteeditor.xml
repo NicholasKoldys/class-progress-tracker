@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialogueNoteEditTextView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:gravity="start|top"
+    android:inputType="textMultiLine"
+    android:lines="8"
+    android:maxLines="10"
+    android:minLines="3"
+    android:scrollbars="vertical"
+    android:scrollHorizontally="false"
+    android:text="Enter Note Text" />

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <requestFocus/>
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/assessmentTitleTextInputLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Assessment Title"
+            android:minWidth="200dp"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/assessmentDueDateTextInputLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Assessment Due Date"
+            android:minWidth="250dp"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/assessmentTitleTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/assessmentSubmitFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_check" />
+
+    <TextView
+        android:id="@+id/assessmentInformationEditLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:text="Assessment's Information"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/assessmentInformationEditText"
+        app:layout_constraintStart_toStartOf="@+id/assessmentInformationEditText" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/assessmentEditDeleteFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_delete_forever" />
+
+    <EditText
+        android:id="@+id/assessmentInformationEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Information Text"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:minWidth="300dp"
+        android:minLines="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/assessmentDueDateTextInputLayout" />
+
+    <TextView
+        android:id="@+id/assessmentDueAlertLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:text="Due Alert"
+        app:layout_constraintBottom_toTopOf="@+id/assessmentEditDueAlertSwitch"
+        app:layout_constraintEnd_toEndOf="@+id/assessmentEditDueAlertSwitch"
+        app:layout_constraintStart_toStartOf="@+id/assessmentEditDueAlertSwitch" />
+
+    <Switch
+        android:id="@+id/assessmentEditDueAlertSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:checked="true"
+        app:layout_constraintStart_toEndOf="@+id/assessmentDueDateTextInputLayout"
+        app:layout_constraintTop_toTopOf="@+id/assessmentDueDateTextInputLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/courseDetailedConstraintLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragmentControllers.CourseDetailedFragment">
+
+    <TextView
+        android:id="@+id/courseTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:padding="16dp"
+        android:text="Course Title"
+        android:textAlignment="center"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/courseStartTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:text="Course Start Time"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/courseEndTextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/courseTitleTextView" />
+
+    <TextView
+        android:id="@+id/courseEndTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Course End Time"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/courseStartTextView"
+        app:layout_constraintTop_toTopOf="@+id/courseStartTextView" />
+
+    <TextView
+        android:id="@+id/courseStatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="8dp"
+        android:text="Course Status"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/courseEndTextView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/courseMentorsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/border_rectangle_accent"
+        android:minHeight="160dp"
+        android:scrollbars="horizontal"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/courseStatusTextView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/courseAssessmentsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="32dp"
+        android:scrollbars="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/courseMentorsRecyclerView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/courseNotesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="32dp"
+        android:scrollbars="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/courseMentorsRecyclerView" />
+
+    <TextView
+        android:id="@+id/courseStartLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Date"
+        app:layout_constraintBottom_toTopOf="@+id/courseStartTextView"
+        app:layout_constraintStart_toStartOf="@+id/courseStartTextView" />
+
+    <TextView
+        android:id="@+id/courseEndLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Date"
+        app:layout_constraintBottom_toTopOf="@+id/courseEndTextView"
+        app:layout_constraintStart_toEndOf="@+id/courseStartTextView" />
+
+    <TextView
+        android:id="@+id/courseStatusLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        app:layout_constraintBottom_toTopOf="@+id/courseStatusTextView"
+        app:layout_constraintStart_toStartOf="@+id/courseStatusTextView" />
+
+    <ProgressBar
+        android:id="@+id/courseLoadingProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/courseAssessmentsRecyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/courseAssessmentsRecyclerView"
+        app:layout_constraintStart_toStartOf="@+id/courseAssessmentsRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/courseAssessmentsRecyclerView" />
+
+    <TextView
+        android:id="@+id/courseEmptyMentorMessageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Mentor Found"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/courseMentorsRecyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/courseMentorsRecyclerView"
+        app:layout_constraintStart_toStartOf="@+id/courseMentorsRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/courseMentorsRecyclerView" />
+
+    <TextView
+        android:id="@+id/courseEmptySubListMessageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="Please Input Data"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/courseAssessmentsRecyclerView"
+        app:layout_constraintStart_toStartOf="@+id/courseAssessmentsRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/courseAssessmentsRecyclerView" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/courseEditFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/courseAssessmentsListFAB"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_edit" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/courseAssessmentsListFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:clickable="true"
+        android:src="@drawable/ic_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/courseMentorsRecyclerView" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/courseNotesListFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:clickable="true"
+        android:src="@drawable/ic_note"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/courseMentorsRecyclerView" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/courseAddNoteFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_add"
+        android:visibility="invisible"
+        app:fabSize="mini"
+        app:layout_constraintStart_toEndOf="@+id/courseOptionsNoteFAB"
+        app:layout_constraintTop_toBottomOf="@+id/courseMentorsRecyclerView" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/courseOptionsNoteFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:clickable="true"
+        android:src="@drawable/ic_more"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/courseMentorsRecyclerView" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/courseEditNoteFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_edit"
+        android:visibility="invisible"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="@+id/courseOptionsNoteFAB"
+        app:layout_constraintStart_toStartOf="@+id/courseOptionsNoteFAB"
+        app:layout_constraintTop_toBottomOf="@+id/courseOptionsNoteFAB" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/courseShareNoteFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_share"
+        android:visibility="invisible"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="@+id/courseOptionsNoteFAB"
+        app:layout_constraintStart_toStartOf="@+id/courseOptionsNoteFAB"
+        app:layout_constraintTop_toBottomOf="@+id/courseEditNoteFAB" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

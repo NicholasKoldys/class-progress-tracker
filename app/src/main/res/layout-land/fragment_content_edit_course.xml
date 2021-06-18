@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:layout_constraintBottom_toTopOf="@+id/courseTitleTextInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <requestFocus/>
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/courseTitleTextInputLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Course Title"
+            android:minWidth="200dp"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/courseStartTextInputLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Course Start Date"
+            android:minWidth="200dp"
+            android:padding="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/courseEndTextInputLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/courseTitleTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/courseEndTextInputLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:hint="Course End Date"
+            android:minWidth="200dp"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/courseStartTextInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/courseStartTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/courseAssessmentEditLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:text="Course's Assessments"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/courseSpinnerLayout" />
+
+        <Button
+            android:id="@+id/courseAddAssessmentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Create New Assessment"
+            app:layout_constraintEnd_toStartOf="@+id/courseDeleteAssessmentButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/courseAssessmentEditLabel" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/courseConfirmFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_check" />
+
+        <LinearLayout
+            android:id="@+id/courseSpinnerLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="45dp"
+            android:background="@drawable/border_rectangle_accent"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/courseEndTextInputLayout">
+
+            <Spinner
+                android:id="@+id/courseStatusEditSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:minWidth="200dp"
+                android:minHeight="50dp"
+                android:padding="8dp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/courseStatusEditLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course Status"
+            app:layout_constraintBottom_toTopOf="@+id/courseSpinnerLayout"
+            app:layout_constraintStart_toStartOf="@+id/courseSpinnerLayout" />
+
+        <TextView
+            android:id="@+id/courseMentorEditLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:text="Course's Mentors"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/courseAddAssessmentButton" />
+
+        <Button
+            android:id="@+id/courseAddMentorButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/courseEditMentorButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/courseMentorEditLabel" />
+
+        <Button
+            android:id="@+id/courseDeleteAssessmentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Assessment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/courseAddAssessmentButton"
+            app:layout_constraintTop_toTopOf="@+id/courseAddAssessmentButton" />
+
+        <Button
+            android:id="@+id/courseDeleteMentorButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Mentor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/courseEditMentorButton"
+            app:layout_constraintTop_toTopOf="@+id/courseAddMentorButton" />
+
+        <Button
+            android:id="@+id/courseEditMentorButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            app:layout_constraintEnd_toStartOf="@+id/courseDeleteMentorButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/courseAddMentorButton"
+            app:layout_constraintTop_toTopOf="@+id/courseAddMentorButton" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/courseEditDeleteFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_delete_forever" />
+
+        <TextView
+            android:id="@+id/courseEditStartSwitchLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Alert"
+            app:layout_constraintBottom_toTopOf="@+id/courseEditStartSwitch"
+            app:layout_constraintStart_toStartOf="@+id/courseEditStartSwitch" />
+
+        <Switch
+            android:id="@+id/courseEditStartSwitch"
+            android:layout_width="47dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:checked="true"
+            android:scaleX="2"
+            android:scaleY="2"
+            app:layout_constraintStart_toEndOf="@+id/courseStartTextInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/courseStartTextInputLayout" />
+
+        <TextView
+            android:id="@+id/courseEditEndSwitchLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End Alert"
+            app:layout_constraintBottom_toTopOf="@+id/courseEditEndSwitch"
+            app:layout_constraintStart_toStartOf="@+id/courseEditEndSwitch" />
+
+        <Switch
+            android:id="@+id/courseEditEndSwitch"
+            android:layout_width="47dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:checked="true"
+            android:scaleX="2"
+            android:scaleY="2"
+            app:layout_constraintStart_toEndOf="@+id/courseEndTextInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/courseEndTextInputLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
