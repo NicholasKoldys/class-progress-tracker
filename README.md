@@ -1,14 +1,56 @@
-# class-progress-tracker
+# Class Progress Tracking Android App
+## WGU Project 2020
+## Developed By : @NicholasKoldys
 
+### Description
+This project was developed for WGU's "MOBILE APPLICATION DEVELOPEMENT".  The purpose of the project invokes the practice of the android's activity lifecycle, method of handling events, and is developed in the programming language **Java**.  It introduces a graphical user interface seperated into 3 sections, manipulation of terms, courses, and assessments.  Each type has its defined attributes/fields and can be linked between.  The application gives the user the ability to manipulate the observable data, sharing the information, notetaking, and scheduling reminders. The application uses a file based database on the users device which invokes the basic CRUD principles, Create, Read, Update, and Delete.
+</br>
+If you would like to view the applications post development reflection - Please follow the link: [Development Reflection](project-documents/development-reflection.md)
 
+<br />
 
+>#### Competencies
+>* Activity Lifecycle
+>* User Interfaces and Handling User Input
+>* Saving Data
+>* Sharing Information
+>* Supporting Different Devices
+>* Deploying Mobile Applications
 
-Development Reflection
+<br />
 
-The College Tracking app is a mobile application for the Android operating system.  The app (application) was written using the Java code version of the Android SDK version 29, with a minimum reaching SDK version of 26, Android 10 and Android 8 respectively.  It was designed and tested mainly through an API 27 Smart Phone Emulator.  The application is a beginning example of architecture components, activity lifecycle, handling user input, data storage, sharing, and multiple platform support.  The explored areas invoked Android’s architectural components.  The major limitation of the app is the fact that it wasn’t developed with web access, it is confined to on device storage.  The app does not include outside libraries, not considered Android Jetpack libraries. The few dependencies that are added: App-compat, Constraint Layout, Lifecycle, and Room (database).  The software, with the help of android libraries, adds limitless possibilities but is limited to the developer’s restriction on using non-android code libraries and creativity.  Android gives users full capabilities in the focus of architecture but limits users of user-interface component shortcuts and usages.
-The app functions around a MVVM or Model, View, View-Model pattern, with smaller sub-patterns assisting.  The hierarchy of the app can be separated into sub-parts: User-Data > Repository > Models > View-Models > Graphical User Interface.  The User-Data is stored internally and retrieved when in use by Android’s Room Database, partnered with Android’s Live Data, which follows the lifecycle of creating and destroying data while its being switched in and out of use.  When data is partnered with an Android View-Model, the activity code becomes cleaner and maintainable, the activity lifecycle management becomes automatic, and as an added bonus the view-model helps limit calls to the phone processor.
-The phones drawbacks are: a small underpowered processor that runs off a battery, limited storage, limited ram, and requiring portability from the user.  A basic app must keep these drawbacks in mind.  However, most apps can rely on the Android’s activity lifecycle control to perform the difficult control of the user-interface, and Android’s operating system in controlling what is needed to be in memory and when to write to storage.  Phones apps can still overstep these controls by improper programming techniques, resulting in memory leaks, crashing, and unbalanced processor time use, which all can lead to an unpleasant user experience.
-While developing the College Tracking app, I had difficulties with passing data to and from the view-models to the interface fragments used to control the user-interface.  I found that I created holes that could cause unnecessary disk thrashing that would cause cascading slowdowns in the updates of data.  This was resolved by creating very limited amount of calls to the data from the only output of the view model, and to never to store references of the data in the activity and fragments.  A challenge then arose from how to design the architecture of the calls to various app operations.  The design can never be 100% perfect so I made a best effort to make operational components separate from each other.
-One of the main challenges was separating concerns in a mobile application, as it creates opportunities for poorly constructed code and going too far in separating concerns, the code can become a disorienting map of files and classes.  I realized a method to assist the separation was through creating separate data entities when dealing with data that is used more than once.  It leads the creation of defining classes which fall into place in the overall structure of the app. Also creating an additional entity for data storage is easier than keeping track of referenced variables within parent objects.
-If I could restructure the app, I would use a cleaner navigation scheme, and have a stronger store-front, home page for the app.  It would alleviate the symptoms I experienced with lost and dead-end navigation and will help manage the data inputs and outputs.  I would implement tabs for easy breadcrumb tracking and to steer the user away from spamming back button clicks to find the page they wish.  Even though a minor detail, I believe I should put more production value into the icon as well.
-Using an Emulator for app development was relatively simple for me.  It was easy to create and can be updated, created, and reverted faster than a development device.  However, the development device can lead to a stronger user experience as it is in the hand and in front of your eyes, which has a completely different feel than a keyboard, monitor, and a mouse.  I feel there is a place for both in the development process, the emulator is easier to maintain, can recover from crashes faster, and quicker to push app deployments, while the development device is a solid object that can be manipulated, measured to a human hand, and sometimes can make an app feel foreign and new during testing. 
+### Demo of the application
+To view the application quickly - Please follow the link:
+[Video and picture demo of this project](demo/demo.md)
+<br />
+To download the application to a device - Download the release:
+[College Tracking Application - Release Version 1.0 - For Android Devices](LINK)
+
+<br />
+
+### How to run the application from source code
+The app can easily be run on Android Studio with an emulator running Android 4 < or later.
+
+<br />
+
+### Interested in the build process
+Please follow the link:
+[How to initially build this project](project-documents/how-to-build.md)
+
+<br />
+
+### Interested in the repository's structure
+Please follow the link:
+[Project Structure Explaination](project-documents/structure-explaination.md)
+
+<br />
+
+### Application's Storyboard - Use Case
+Please follow the link:
+[Storyboard](project-documents/storyboard.pdf)
+
+<br />
+
+### Application's CRC and Mockup Diagram
+Please follow the link:
+[CRC and Mockup](project-documents/crc-and-mockup.pdf)
