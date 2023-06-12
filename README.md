@@ -1,4 +1,7 @@
 # Class Progress Tracking Android App
+
+Android Application using mvc patterns, Multi-page application with data management
+
 ## WGU Project 2020
 ## Developed By : @NicholasKoldys
 
